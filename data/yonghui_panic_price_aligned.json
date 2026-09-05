@@ -1,0 +1,398 @@
+[
+  {
+    "week_start": "2024-09-16",
+    "price": 2.28
+  },
+  {
+    "week_start": "2024-09-23",
+    "price": 3.3
+  },
+  {
+    "week_start": "2024-09-30",
+    "price": 3.63
+  },
+  {
+    "week_start": "2024-10-07",
+    "price": 2.91
+  },
+  {
+    "week_start": "2024-10-14",
+    "price": 3.03
+  },
+  {
+    "week_start": "2024-10-21",
+    "price": 3.8
+  },
+  {
+    "week_start": "2024-10-28",
+    "price": 5.07
+  },
+  {
+    "week_start": "2024-11-04",
+    "price": 5.14
+  },
+  {
+    "week_start": "2024-11-11",
+    "price": 4.34
+  },
+  {
+    "week_start": "2024-11-18",
+    "price": 4.23
+  },
+  {
+    "week_start": "2024-11-25",
+    "price": 5.04
+  },
+  {
+    "week_start": "2024-12-02",
+    "price": 5.62
+  },
+  {
+    "week_start": "2024-12-09",
+    "price": 7.15
+  },
+  {
+    "week_start": "2024-12-16",
+    "price": 6.22
+  },
+  {
+    "week_start": "2024-12-23",
+    "price": 6.89
+  },
+  {
+    "week_start": "2024-12-30",
+    "price": 6.12
+  },
+  {
+    "week_start": "2025-01-06",
+    "price": 5.45
+  },
+  {
+    "week_start": "2025-01-13",
+    "price": 5.54
+  },
+  {
+    "week_start": "2025-01-20",
+    "price": 5.87
+  },
+  {
+    "week_start": "2025-01-27",
+    "price": 5.46
+  },
+  {
+    "week_start": "2025-02-03",
+    "price": 5.36
+  },
+  {
+    "week_start": "2025-02-10",
+    "price": 5.44
+  },
+  {
+    "week_start": "2025-02-17",
+    "price": 5.28
+  },
+  {
+    "week_start": "2025-02-24",
+    "price": 5.33
+  },
+  {
+    "week_start": "2025-03-03",
+    "price": 5.0
+  },
+  {
+    "week_start": "2025-03-10",
+    "price": 4.93
+  },
+  {
+    "week_start": "2025-03-17",
+    "price": 4.84
+  },
+  {
+    "week_start": "2025-03-24",
+    "price": 4.51
+  },
+  {
+    "week_start": "2025-03-31",
+    "price": 5.1
+  },
+  {
+    "week_start": "2025-04-07",
+    "price": 6.03
+  },
+  {
+    "week_start": "2025-04-14",
+    "price": 5.54
+  },
+  {
+    "week_start": "2025-04-21",
+    "price": 5.44
+  },
+  {
+    "week_start": "2025-04-28",
+    "price": 5.16
+  },
+  {
+    "week_start": "2025-05-05",
+    "price": 5.16
+  },
+  {
+    "week_start": "2025-05-12",
+    "price": 5.22
+  },
+  {
+    "week_start": "2025-05-19",
+    "price": 5.09
+  },
+  {
+    "week_start": "2025-05-26",
+    "price": 4.98
+  },
+  {
+    "week_start": "2025-06-02",
+    "price": 5.06
+  },
+  {
+    "week_start": "2025-06-09",
+    "price": 4.86
+  },
+  {
+    "week_start": "2025-06-16",
+    "price": 4.75
+  },
+  {
+    "week_start": "2025-06-23",
+    "price": 4.84
+  },
+  {
+    "week_start": "2025-06-30",
+    "price": 4.77
+  },
+  {
+    "week_start": "2025-07-07",
+    "price": 4.89
+  },
+  {
+    "week_start": "2025-07-14",
+    "price": 4.75
+  },
+  {
+    "week_start": "2025-07-21",
+    "price": 4.86
+  },
+  {
+    "week_start": "2025-07-28",
+    "price": 4.74
+  },
+  {
+    "week_start": "2025-08-04",
+    "price": 4.71
+  },
+  {
+    "week_start": "2025-08-11",
+    "price": 4.76
+  },
+  {
+    "week_start": "2025-08-18",
+    "price": 4.96
+  },
+  {
+    "week_start": "2025-08-25",
+    "price": 5.18
+  },
+  {
+    "week_start": "2025-09-01",
+    "price": 5.21
+  },
+  {
+    "week_start": "2025-09-08",
+    "price": 5.22
+  },
+  {
+    "week_start": "2025-09-15",
+    "price": 4.99
+  },
+  {
+    "week_start": "2025-09-22",
+    "price": 4.78
+  },
+  {
+    "week_start": "2025-09-29",
+    "price": 4.68
+  },
+  {
+    "week_start": "2025-10-06",
+    "price": 4.65
+  },
+  {
+    "week_start": "2025-10-13",
+    "price": 4.71
+  },
+  {
+    "week_start": "2025-10-20",
+    "price": 4.71
+  },
+  {
+    "week_start": "2025-10-27",
+    "price": 4.67
+  },
+  {
+    "week_start": "2025-11-03",
+    "price": 4.57
+  },
+  {
+    "week_start": "2025-11-10",
+    "price": 4.64
+  },
+  {
+    "week_start": "2025-11-17",
+    "price": 4.01
+  },
+  {
+    "week_start": "2025-11-24",
+    "price": 4.06
+  },
+  {
+    "week_start": "2025-12-01",
+    "price": 3.93
+  },
+  {
+    "week_start": "2025-12-08",
+    "price": 5.0
+  },
+  {
+    "week_start": "2025-12-15",
+    "price": 5.76
+  },
+  {
+    "week_start": "2025-12-22",
+    "price": 5.29
+  },
+  {
+    "week_start": "2025-12-29",
+    "price": 4.69
+  },
+  {
+    "week_start": "2026-01-05",
+    "price": 5.16
+  },
+  {
+    "week_start": "2026-01-12",
+    "price": 4.71
+  },
+  {
+    "week_start": "2026-01-19",
+    "price": 4.71
+  },
+  {
+    "week_start": "2026-01-26",
+    "price": 4.4
+  },
+  {
+    "week_start": "2026-02-02",
+    "price": 4.61
+  },
+  {
+    "week_start": "2026-02-09",
+    "price": 4.31
+  },
+  {
+    "week_start": "2026-02-23",
+    "price": 4.25
+  },
+  {
+    "week_start": "2026-03-02",
+    "price": 4.16
+  },
+  {
+    "week_start": "2026-03-09",
+    "price": 4.01
+  },
+  {
+    "week_start": "2026-03-16",
+    "price": 3.85
+  },
+  {
+    "week_start": "2026-03-23",
+    "price": 3.82
+  },
+  {
+    "week_start": "2026-03-30",
+    "price": 3.67
+  },
+  {
+    "week_start": "2026-04-06",
+    "price": 3.72
+  },
+  {
+    "week_start": "2026-04-13",
+    "price": 4.11
+  },
+  {
+    "week_start": "2026-04-20",
+    "price": 3.78
+  },
+  {
+    "week_start": "2026-04-27",
+    "price": 3.84
+  },
+  {
+    "week_start": "2026-05-04",
+    "price": 3.77
+  },
+  {
+    "week_start": "2026-05-11",
+    "price": 3.66
+  },
+  {
+    "week_start": "2026-05-18",
+    "price": 3.46
+  },
+  {
+    "week_start": "2026-05-25",
+    "price": 3.7
+  },
+  {
+    "week_start": "2026-06-01",
+    "price": 3.46
+  },
+  {
+    "week_start": "2026-06-08",
+    "price": 3.21
+  },
+  {
+    "week_start": "2026-06-15",
+    "price": 3.1
+  },
+  {
+    "week_start": "2026-06-22",
+    "price": 3.03
+  },
+  {
+    "week_start": "2026-06-29",
+    "price": 3.09
+  },
+  {
+    "week_start": "2026-07-06",
+    "price": 3.2
+  },
+  {
+    "week_start": "2026-07-13",
+    "price": 3.07
+  },
+  {
+    "week_start": "2026-07-20",
+    "price": 2.99
+  },
+  {
+    "week_start": "2026-07-27",
+    "price": 3.28
+  },
+  {
+    "week_start": "2026-08-03",
+    "price": 3.23
+  },
+  {
+    "week_start": "2026-08-10",
+    "price": 3.19
+  }
+]

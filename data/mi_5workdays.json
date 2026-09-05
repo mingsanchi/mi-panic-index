@@ -1,0 +1,52 @@
+[
+  {
+    "date": "2026-08-18",
+    "total": 896,
+    "bull": 227,
+    "bear": 137,
+    "neutral": 532,
+    "bear_ratio": 0.3764,
+    "mean_strength": 0.1336,
+    "panic": 45.5
+  },
+  {
+    "date": "2026-08-17",
+    "total": 272,
+    "bull": 48,
+    "bear": 33,
+    "neutral": 191,
+    "bear_ratio": 0.4074,
+    "mean_strength": 0.0952,
+    "panic": 17.3
+  },
+  {
+    "date": "2026-08-14",
+    "total": 417,
+    "bull": 68,
+    "bear": 70,
+    "neutral": 279,
+    "bear_ratio": 0.5072,
+    "mean_strength": 0.0016,
+    "panic": 69.4
+  },
+  {
+    "date": "2026-08-13",
+    "total": 449,
+    "bull": 50,
+    "bear": 73,
+    "neutral": 326,
+    "bear_ratio": 0.5935,
+    "mean_strength": -0.0365,
+    "panic": 86.3
+  },
+  {
+    "date": "2026-08-12",
+    "total": 416,
+    "bull": 68,
+    "bear": 55,
+    "neutral": 293,
+    "bear_ratio": 0.4472,
+    "mean_strength": 0.0342,
+    "panic": 45.6
+  }
+]

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>港股/A股 100 周恐慌指数</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+  :root { --bg:#f7f8fa; --card:#fff; --text:#1f2329; --sub:#646a73; --line:#e5e6eb; --red:#e03a3a; --green:#1a9e5c; --accent:#2b6de8; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.6; }
+  .wrap { max-width:1120px; margin:0 auto; padding:28px 20px 60px; }
+  h1 { font-size:24px; font-weight:700; text-align:center; }
+  .sub { color:var(--sub); font-size:13px; text-align:center; margin-top:6px; }
+  .search { display:flex; gap:10px; justify-content:center; margin:24px 0 8px; flex-wrap:wrap; }
+  .search input { width:280px; padding:12px 16px; font-size:15px; border:1px solid var(--line); border-radius:10px; outline:none; }
+  .search input:focus { border-color:var(--accent); }
+  .search button { padding:12px 28px; font-size:15px; font-weight:600; color:#fff; background:var(--accent); border:none; border-radius:10px; cursor:pointer; }
+  .search button:disabled { background:#a0b8e0; cursor:not-allowed; }
+  .hint { text-align:center; color:var(--sub); font-size:12px; margin-bottom:16px; }
+  .hint code { background:#eef0f3; padding:1px 6px; border-radius:4px; }
+  /* 进度 */
+  .progress-wrap { display:none; max-width:520px; margin:0 auto 16px; }
+  .progress-bar { height:10px; background:#eef0f3; border-radius:5px; overflow:hidden; }
+  .progress-bar i { display:block; height:100%; width:0; background:var(--accent); transition:width .4s; }
+  .progress-text { text-align:center; font-size:13px; color:var(--sub); margin-top:8px; }
+  /* 结果 */
+  .result { display:none; }
+  .hero { display:flex; gap:14px; flex-wrap:wrap; margin-top:16px; }
+  .stat { flex:1 1 180px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; text-align:center; }
+  .stat .v { font-size:28px; font-weight:800; }
+  .stat .k { font-size:12px; color:var(--sub); margin-top:4px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-top:16px; }
+  .card h2 { font-size:16px; font-weight:600; margin-bottom:12px; }
+  .chart { height:380px; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:760px) { .grid2 { grid-template-columns:1fr; } }
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  th,td { padding:6px 8px; border-bottom:1px solid var(--line); text-align:left; }
+  th { color:var(--sub); font-weight:500; background:#fafbfc; position:sticky; top:0; }
+  .scroll { max-height:520px; overflow-y:auto; }
+  .red { color:var(--red); } .green { color:var(--green); }
+  .lv-ex { color:#0f6e56; font-weight:600; } .lv-hi { color:#1a9e5c; } .lv-pa { color:#4aa06a; } .lv-ca { color:#7cbd8f; } .lv-mi { color:#b8d9c3; }
+  .disc { font-size:12px; color:var(--sub); margin-top:20px; }
+  .err { text-align:center; color:var(--red); font-size:14px; margin-top:12px; display:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>港股 / A股 · 100 周恐慌指数</h1>
+  <div class="sub">数据源：东方财富股吧｜公式：Panic = 看空帖数 × (0.2 − 情感均值) / 0.2｜按 ISO 周聚合</div>
+
+  <div class="search">
+    <input id="codeInput" placeholder="输入股票代码，如 601933 / 01810" />
+    <button id="goBtn" onclick="start()">生成恐慌指数</button>
+  </div>
+  <div class="hint">A股输入 6 位代码（如 <code>600519</code>），港股输入 5 位代码（如 <code>01810</code>）｜首次需抓取约 5 分钟</div>
+  <div class="err" id="errBox"></div>
+
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-bar"><i id="progressBar"></i></div>
+    <div class="progress-text" id="progressText">初始化…</div>
+  </div>
+
+  <div class="result" id="resultBox">
+    <div class="hero" id="heroBox"></div>
+    <div class="card"><h2>恐慌指数 100 周走势（越大越恐慌）</h2><div id="panicChart" class="chart"></div></div>
+    <div class="card"><h2>看空占比与发帖量</h2><div class="grid2"><div id="ratioChart" class="chart" style="height:300px;"></div><div id="volChart" class="chart" style="height:300px;"></div></div></div>
+    <div class="card"><h2>100 周完整明细</h2><div class="scroll"><table id="detailTable"></table></div></div>
+    <p class="disc"><b>免责声明</b>：以上内容基于公开数据和量化分析，仅供参考，不构成投资建议。市场有风险，投资需谨慎。任何投资决策应结合个人风险承受能力、资金状况和投资目标独立判断，必要时咨询持牌专业机构。过往表现不预示未来收益。</p>
+  </div>
+</div>
+
+<script>
+var taskId = null;
+var timer = null;
+
+function lvClass(level) {
+  if (level === '极度恐慌') return 'lv-ex';
+  if (level === '高恐慌') return 'lv-hi';
+  if (level === '恐慌') return 'lv-pa';
+  if (level === '中性偏谨慎') return 'lv-ca';
+  return 'lv-mi';
+}
+
+function start() {
+  var code = document.getElementById('codeInput').value.trim();
+  if (!code) { showErr('请输入股票代码'); return; }
+  showErr('');
+  document.getElementById('resultBox').style.display = 'none';
+  document.getElementById('progressWrap').style.display = 'block';
+  setProgress(0, '提交任务…');
+  document.getElementById('goBtn').disabled = true;
+
+  fetch('/api/start', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({code:code}) })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d.error) { showErr(d.error); resetBtn(); return; }
+      taskId = d.task_id;
+      document.getElementById('progressText').textContent = d.name + '（' + d.market + '）' + ' · ' + d.code;
+      poll();
+    })
+    .catch(function(e){ showErr('请求失败：' + e); resetBtn(); });
+}
+
+function poll() {
+  timer = setInterval(function(){
+    fetch('/api/progress/' + taskId)
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        setProgress(d.progress, d.stage);
+        if (d.status === 'done') {
+          clearInterval(timer);
+          loadResult();
+        } else if (d.status === 'error') {
+          clearInterval(timer);
+          showErr('任务失败：' + (d.message || '未知错误'));
+          resetBtn();
+        }
+      });
+  }, 1000);
+}
+
+function setProgress(pct, text) {
+  document.getElementById('progressBar').style.width = pct + '%';
+  var name = document.getElementById('progressText').textContent.split(' · ')[0];
+  document.getElementById('progressText').textContent = text + '（' + Math.round(pct) + '%）';
+}
+
+function loadResult() {
+  fetch('/api/result/' + taskId)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d.error) { showErr(d.error); resetBtn(); return; }
+      render(d);
+      resetBtn();
+    });
+}
+
+function resetBtn() {
+  document.getElementById('goBtn').disabled = false;
+  document.getElementById('progressWrap').style.display = 'none';
+}
+
+function showErr(msg) {
+  var e = document.getElementById('errBox');
+  e.textContent = msg;
+  e.style.display = msg ? 'block' : 'none';
+}
+
+function render(d) {
+  document.getElementById('resultBox').style.display = 'block';
+  var W = d.weekly;
+  var complete = W.length > 1 ? W.slice(0, W.length - 1) : W;
+  var cur = W[W.length - 1];
+
+  var weeks = complete.map(function(w){ return w.week_start; });
+  var panics = complete.map(function(w){ return w.panic; });
+  var totals = complete.map(function(w){ return w.total; });
+  var bearRatios = complete.map(function(w){ return Math.round(w.bear_ratio * 1000) / 10; });
+
+  // 统计
+  var maxW = complete.reduce(function(a,b){ return a.panic > b.panic ? a : b; });
+  var minW = complete.reduce(function(a,b){ return a.panic < b.panic ? a : b; });
+  var avgPanic = Math.round(complete.reduce(function(s,w){ return s + w.panic; }, 0) / complete.length);
+  var avgBear = Math.round(complete.reduce(function(s,w){ return s + w.bear_ratio; }, 0) / complete.length * 1000) / 10;
+
+  var heroHtml = '';
+  heroHtml += '<div class="stat"><div class="v green">' + avgPanic + '</div><div class="k">100 周均值</div></div>';
+  heroHtml += '<div class="stat"><div class="v">' + avgBear + '%</div><div class="k">看空占比均值</div></div>';
+  heroHtml += '<div class="stat"><div class="v green">' + maxW.panic + '</div><div class="k">最高恐慌（' + maxW.week_start + '）</div></div>';
+  heroHtml += '<div class="stat"><div class="v red">' + minW.panic + '</div><div class="k">最低（' + minW.week_start + '）</div></div>';
+  heroHtml += '<div class="stat"><div class="v">' + cur.panic + '</div><div class="k">本周（进行中）</div></div>';
+  document.getElementById('heroBox').innerHTML = heroHtml;
+
+  // 恐慌指数走势
+  echarts.init(document.getElementById('panicChart')).setOption({
+    tooltip: { trigger:'axis', formatter:function(p){ var w = complete[p[0].dataIndex]; return w.week_start + '<br>恐慌指数: ' + w.panic + '（' + w.level + '）<br>看空 ' + w.bear + ' / 看多 ' + w.bull + ' / 中性 ' + w.neutral; } },
+    grid: { left:60, right:20, top:30, bottom:60 },
+    xAxis: { type:'category', data:weeks, boundaryGap:false, axisLabel:{ rotate:45, fontSize:10 } },
+    yAxis: { type:'value', scale:true, name:'恐慌指数' },
+    series: [{
+      type:'line', data:panics, smooth:true, lineStyle:{ width:2, color:'#2b6de8' },
+      itemStyle:{ color:'#2b6de8' }, areaStyle:{ color:'rgba(43,109,232,0.06)' },
+      markLine:{ data:[{ yAxis:3000, name:'极度恐慌线' }], lineStyle:{ type:'dashed', color:'#999' } }
+    }]
+  });
+
+  // 看空占比
+  echarts.init(document.getElementById('ratioChart')).setOption({
+    tooltip:{ trigger:'axis', formatter:function(p){ return p[0].name + ': 看空占比 ' + p[0].value + '%'; } },
+    grid:{ left:40, right:20, top:30, bottom:60 },
+    xAxis:{ type:'category', data:weeks, boundaryGap:false, axisLabel:{ rotate:45, fontSize:10 } },
+    yAxis:{ type:'value', min:0, max:100, name:'看空占比(%)' },
+    series:[{ type:'line', data:bearRatios, smooth:true, lineStyle:{ color:'#1a9e5c', width:2 }, itemStyle:{ color:'#1a9e5c' },
+      markLine:{ data:[{ yAxis:50 }], lineStyle:{ type:'dashed', color:'#999' }, label:{ formatter:'多空平衡 50%' } } }]
+  });
+
+  // 发帖量
+  echarts.init(document.getElementById('volChart')).setOption({
+    tooltip:{ trigger:'axis' },
+    grid:{ left:50, right:20, top:30, bottom:60 },
+    xAxis:{ type:'category', data:weeks, axisLabel:{ rotate:45, fontSize:10 } },
+    yAxis:{ type:'value', name:'发帖量' },
+    series:[{ type:'bar', data:totals, itemStyle:{ color:'#2b6de8' } }]
+  });
+
+  // 明细表
+  var th = '<tr><th>周起始</th><th>恐慌指数</th><th>方向</th><th>发帖量</th><th>看多</th><th>看空</th><th>看空占比</th><th>情感均值</th></tr>';
+  var rows = complete.map(function(w){
+    var sign = w.panic > 0 ? '+' : '';
+    return '<tr><td>' + w.week_start + '</td><td><b class="' + lvClass(w.level) + '">' + sign + w.panic + '</b></td><td>' + w.level + '</td><td>' + w.total + '</td><td>' + w.bull + '</td><td>' + w.bear + '</td><td>' + Math.round(w.bear_ratio*100) + '%</td><td>' + w.mean_strength + '</td></tr>';
+  }).join('');
+  var curRow = '<tr style="background:#f6f8fb;"><td><b>' + cur.week_start + '</b> (进行中)</td><td><b class="' + lvClass(cur.level) + '">' + (cur.panic>0?'+':'') + cur.panic + '</b></td><td>' + cur.level + '</td><td>' + cur.total + '</td><td>' + cur.bull + '</td><td>' + cur.bear + '</td><td>' + Math.round(cur.bear_ratio*100) + '%</td><td>' + cur.mean_strength + '</td></tr>';
+  document.getElementById('detailTable').innerHTML = th + rows + curRow;
+}
+</script>
+</body>
+</html>

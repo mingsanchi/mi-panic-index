@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小米集团-W 散户恐慌指数 · 报告中心</title>
+<style>
+  :root { --bg:#f7f8fa; --card:#fff; --text:#1f2329; --sub:#646a73; --line:#e5e6eb; --red:#e03a3a; --green:#1a9e5c; --accent:#2b6de8; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.6; }
+  .wrap { max-width:1080px; margin:0 auto; padding:40px 20px 60px; }
+  header { text-align:center; margin-bottom:8px; }
+  h1 { font-size:28px; font-weight:800; }
+  .sub { color:var(--sub); font-size:14px; margin-top:8px; }
+  .badge { display:inline-block; font-size:12px; color:var(--accent); border:1px solid var(--accent); border-radius:20px; padding:2px 12px; margin:4px 4px 0; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin-top:32px; }
+  a.card { display:block; text-decoration:none; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease; }
+  a.card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(31,35,41,.08); border-color:var(--accent); }
+  .card h2 { font-size:17px; font-weight:700; }
+  .card p { font-size:13px; color:var(--sub); margin-top:6px; }
+  .card .tag { display:inline-block; font-size:11px; border-radius:6px; padding:2px 8px; margin-top:10px; background:#eef3ff; color:var(--accent); }
+  .card .tag.main { background:#e8f5ee; color:var(--green); }
+  .method { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; margin-top:24px; }
+  .method h2 { font-size:16px; font-weight:700; margin-bottom:10px; }
+  .method p, .method li { font-size:13px; color:var(--sub); }
+  .method ul { padding-left:20px; margin-top:6px; }
+  .disc { font-size:12px; color:var(--sub); border-top:1px solid var(--line); margin-top:24px; padding-top:14px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>小米集团-W 散户恐慌指数</h1>
+    <div class="sub">基于东方财富股吧散户帖文的量化情绪分析 · 港股 01810.HK</div>
+    <div>
+      <span class="badge">词典法情感分析</span>
+      <span class="badge">港股 + A 股</span>
+      <span class="badge">多时间窗口</span>
+      <span class="badge">ECharts 可视化</span>
+    </div>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="output/weekly_panic_report.html">
+      <h2>小米集团-W · 100 周回顾</h2>
+      <p>恐慌指数 vs 股价 vs 看空占比三轴走势，完整 100 周明细 + 本周进行中数据</p>
+      <span class="tag main">主报告</span>
+    </a>
+    <a class="card" href="output/mi_90days_report.html">
+      <h2>小米集团-W · 90 天</h2>
+      <p>近 90 天日频恐慌指数 + 股价双轴走势，含交易日完整列表</p>
+      <span class="tag">日频</span>
+    </a>
+    <a class="card" href="output/mi_60days_report.html">
+      <h2>小米集团-W · 60 天</h2>
+      <p>近 60 天日频恐慌指数走势</p>
+      <span class="tag">日频</span>
+    </a>
+    <a class="card" href="output/mi_30workdays_report.html">
+      <h2>小米集团-W · 30 个工作日</h2>
+      <p>近 30 个工作日恐慌指数走势</p>
+      <span class="tag">日频</span>
+    </a>
+    <a class="card" href="output/yonghui_panic_report.html">
+      <h2>永辉超市 · 100 周回顾</h2>
+      <p>A 股对照样本（601933.SH），同口径 100 周恐慌指数</p>
+      <span class="tag">A 股</span>
+    </a>
+    <a class="card" href="output/yonghui_90days_report.html">
+      <h2>永辉超市 · 90 天</h2>
+      <p>A 股对照样本近 90 天日频恐慌指数</p>
+      <span class="tag">A 股</span>
+    </a>
+  </div>
+
+  <div class="method">
+    <h2>方法论与数据说明</h2>
+    <ul>
+      <li>指数公式：<b>Panic = 看空帖数 × (0.2 − 情感均值) / 0.2</b>，按 ISO 周 / 交易日聚合；Panic &gt; 3000 判定为「极度恐慌」，其余按分位数分档。</li>
+      <li>情感均值 = 热度加权单帖看多/看空强度（范围 −1 ~ +1），权重 w = 1 + √(阅读 + 2×评论)。</li>
+      <li>NLP：金融看多/看空词典法（纯规则），对标题 + 正文匹配看多词（涨停/抄底/利好…）与看空词（跌停/割肉/活埋…）。</li>
+      <li>数据源：东方财富股吧移动端接口，已剔除资讯帖、公告及自媒体转载。</li>
+      <li>局限：词典法对长文/反讽有误判；情绪温度计不代表股价涨跌方向。</li>
+    </ul>
+  </div>
+
+  <p class="disc"><b>免责声明</b>：以上内容基于公开数据和量化分析，仅供参考，不构成投资建议。市场有风险，投资需谨慎。过往表现不预示未来收益。</p>
+</div>
+</body>
+</html>

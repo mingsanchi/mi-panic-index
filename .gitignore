@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# WorkBuddy 项目记忆（个人工作日志，不入库）
+.workbuddy/
+
+# 雪球登录凭据（敏感，禁止入库）
+data/xueqiu_cookies.json
+xueqiu_cookies.json
+
+# 二维码临时图
+*.png
+
+# 临时/调试文件
+*.log
