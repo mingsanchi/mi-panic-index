@@ -1123,13 +1123,13 @@
   },
   {
     "week_start": "2026-08-31",
-    "panic": 107.6,
+    "panic": 117.7,
     "level": "中性偏谨慎",
-    "total": 1308,
-    "bull": 236,
-    "bear": 175,
-    "neutral": 897,
-    "bear_ratio": 0.4258,
-    "mean_strength": 0.077
+    "total": 1432,
+    "bull": 255,
+    "bear": 187,
+    "neutral": 990,
+    "bear_ratio": 0.4231,
+    "mean_strength": 0.0741
   }
 ]

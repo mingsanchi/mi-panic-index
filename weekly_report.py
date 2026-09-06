@@ -15,6 +15,8 @@ STOCK_CODE = sys.argv[2] if len(sys.argv) > 2 else "01810.HK"
 IN_FILE = sys.argv[3] if len(sys.argv) > 3 else "weekly_panic.json"
 OUT_HTML = sys.argv[4] if len(sys.argv) > 4 else "weekly_panic_report.html"
 PRICE_FILE = sys.argv[5] if len(sys.argv) > 5 else "mi_panic_price_aligned.json"
+PRICE_MIN = sys.argv[6] if len(sys.argv) > 6 else "20"
+CUR = "HK$" if ".HK" in STOCK_CODE else "¥"
 
 with open(os.path.join(BASE, "data", IN_FILE), encoding="utf-8") as f:
     W = json.load(f)
@@ -204,7 +206,7 @@ echarts.init(document.getElementById('panic')).setOption({{
   xAxis: {{ type:'category', data:weeks, boundaryGap:false, axisLabel:{{ rotate:45, fontSize:10 }} }},
   yAxis: [
     {{ type:'value', min:0, name:'恐慌指数', position:'left' }},
-    {{ type:'value', min:20, name:'股价(HK$)', position:'right' }},
+    {{ type:'value', min:{PRICE_MIN}, name:'股价({CUR})', position:'right' }},
     {{ type:'value', min:0, max:100, name:'看空占比%', position:'right', offset:55, splitLine:{{ show:false }} }}
   ],
   series: [{{

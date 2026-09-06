@@ -1,5 +1,149 @@
 [
   {
+    "week_start": "2024-01-01",
+    "price": 2.76
+  },
+  {
+    "week_start": "2024-01-08",
+    "price": 2.75
+  },
+  {
+    "week_start": "2024-01-15",
+    "price": 2.65
+  },
+  {
+    "week_start": "2024-01-22",
+    "price": 2.67
+  },
+  {
+    "week_start": "2024-01-29",
+    "price": 2.37
+  },
+  {
+    "week_start": "2024-02-05",
+    "price": 2.66
+  },
+  {
+    "week_start": "2024-02-19",
+    "price": 2.56
+  },
+  {
+    "week_start": "2024-02-26",
+    "price": 2.61
+  },
+  {
+    "week_start": "2024-03-04",
+    "price": 2.49
+  },
+  {
+    "week_start": "2024-03-11",
+    "price": 2.59
+  },
+  {
+    "week_start": "2024-03-18",
+    "price": 2.35
+  },
+  {
+    "week_start": "2024-03-25",
+    "price": 2.28
+  },
+  {
+    "week_start": "2024-04-01",
+    "price": 2.3
+  },
+  {
+    "week_start": "2024-04-08",
+    "price": 2.19
+  },
+  {
+    "week_start": "2024-04-15",
+    "price": 2.17
+  },
+  {
+    "week_start": "2024-04-22",
+    "price": 2.28
+  },
+  {
+    "week_start": "2024-04-29",
+    "price": 2.43
+  },
+  {
+    "week_start": "2024-05-06",
+    "price": 2.56
+  },
+  {
+    "week_start": "2024-05-13",
+    "price": 2.45
+  },
+  {
+    "week_start": "2024-05-20",
+    "price": 2.37
+  },
+  {
+    "week_start": "2024-05-27",
+    "price": 2.63
+  },
+  {
+    "week_start": "2024-06-03",
+    "price": 2.56
+  },
+  {
+    "week_start": "2024-06-10",
+    "price": 2.8
+  },
+  {
+    "week_start": "2024-06-17",
+    "price": 2.75
+  },
+  {
+    "week_start": "2024-06-24",
+    "price": 2.48
+  },
+  {
+    "week_start": "2024-07-01",
+    "price": 2.26
+  },
+  {
+    "week_start": "2024-07-08",
+    "price": 2.18
+  },
+  {
+    "week_start": "2024-07-15",
+    "price": 2.26
+  },
+  {
+    "week_start": "2024-07-22",
+    "price": 2.18
+  },
+  {
+    "week_start": "2024-07-29",
+    "price": 2.23
+  },
+  {
+    "week_start": "2024-08-05",
+    "price": 2.7
+  },
+  {
+    "week_start": "2024-08-12",
+    "price": 2.26
+  },
+  {
+    "week_start": "2024-08-19",
+    "price": 2.23
+  },
+  {
+    "week_start": "2024-08-26",
+    "price": 2.34
+  },
+  {
+    "week_start": "2024-09-02",
+    "price": 2.28
+  },
+  {
+    "week_start": "2024-09-09",
+    "price": 2.25
+  },
+  {
     "week_start": "2024-09-16",
     "price": 2.28
   },
@@ -394,5 +538,17 @@
   {
     "week_start": "2026-08-10",
     "price": 3.19
+  },
+  {
+    "week_start": "2026-08-17",
+    "price": 3.07
+  },
+  {
+    "week_start": "2026-08-24",
+    "price": 3.15
+  },
+  {
+    "week_start": "2026-08-31",
+    "price": 3.16
   }
 ]

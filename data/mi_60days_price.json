@@ -1,40 +1,5 @@
 [
   {
-    "date": "2026-06-30",
-    "panic": 121.1,
-    "price": 21.64,
-    "bear_ratio": 0.4708,
-    "total": 966
-  },
-  {
-    "date": "2026-07-02",
-    "panic": 57.9,
-    "price": 22.6,
-    "bear_ratio": 0.4364,
-    "total": 626
-  },
-  {
-    "date": "2026-07-03",
-    "panic": 96.9,
-    "price": 22.96,
-    "bear_ratio": 0.4632,
-    "total": 750
-  },
-  {
-    "date": "2026-07-06",
-    "panic": 21.2,
-    "price": 23.28,
-    "bear_ratio": 0.3826,
-    "total": 306
-  },
-  {
-    "date": "2026-07-07",
-    "panic": 27.8,
-    "price": 23.1,
-    "bear_ratio": 0.4029,
-    "total": 398
-  },
-  {
     "date": "2026-07-08",
     "panic": 113.0,
     "price": 25.3,
@@ -299,5 +264,40 @@
     "price": 27.82,
     "bear_ratio": 0.3016,
     "total": 200
+  },
+  {
+    "date": "2026-08-31",
+    "panic": 8.5,
+    "price": 27.62,
+    "bear_ratio": 0.3733,
+    "total": 224
+  },
+  {
+    "date": "2026-09-01",
+    "panic": 10.1,
+    "price": 27.56,
+    "bear_ratio": 0.3519,
+    "total": 190
+  },
+  {
+    "date": "2026-09-02",
+    "panic": 15.5,
+    "price": 28.06,
+    "bear_ratio": 0.3571,
+    "total": 246
+  },
+  {
+    "date": "2026-09-03",
+    "panic": 45.0,
+    "price": 27.44,
+    "bear_ratio": 0.5133,
+    "total": 356
+  },
+  {
+    "date": "2026-09-04",
+    "panic": 33.1,
+    "price": 28.44,
+    "bear_ratio": 0.4545,
+    "total": 292
   }
 ]
