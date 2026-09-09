@@ -1069,7 +1069,7 @@
   {
     "week_start": "2026-07-27",
     "panic": 119.1,
-    "level": "温和",
+    "level": "中性偏谨慎",
     "total": 996,
     "bull": 215,
     "bear": 161,
@@ -1131,5 +1131,16 @@
     "neutral": 854,
     "bear_ratio": 0.4738,
     "mean_strength": 0.0485
+  },
+  {
+    "week_start": "2026-09-07",
+    "panic": 48.4,
+    "level": "温和",
+    "total": 731,
+    "bull": 154,
+    "bear": 105,
+    "neutral": 472,
+    "bear_ratio": 0.4054,
+    "mean_strength": 0.1078
   }
 ]

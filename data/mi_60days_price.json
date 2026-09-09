@@ -1,26 +1,5 @@
 [
   {
-    "date": "2026-07-08",
-    "panic": 113.0,
-    "price": 25.3,
-    "bear_ratio": 0.4526,
-    "total": 919
-  },
-  {
-    "date": "2026-07-09",
-    "panic": -12.7,
-    "price": 25.0,
-    "bear_ratio": 0.3369,
-    "total": 542
-  },
-  {
-    "date": "2026-07-10",
-    "panic": 29.9,
-    "price": 25.84,
-    "bear_ratio": 0.3841,
-    "total": 416
-  },
-  {
     "date": "2026-07-13",
     "panic": 51.9,
     "price": 25.84,
@@ -299,5 +278,26 @@
     "price": 28.44,
     "bear_ratio": 0.4545,
     "total": 292
+  },
+  {
+    "date": "2026-09-07",
+    "panic": 7.8,
+    "price": 27.5,
+    "bear_ratio": 0.5385,
+    "total": 57
+  },
+  {
+    "date": "2026-09-08",
+    "panic": 118.6,
+    "price": 26.92,
+    "bear_ratio": 0.4853,
+    "total": 908
+  },
+  {
+    "date": "2026-09-09",
+    "panic": 97.0,
+    "price": 26.38,
+    "bear_ratio": 0.5436,
+    "total": 728
   }
 ]
