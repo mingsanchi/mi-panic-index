@@ -1,19 +1,5 @@
 [
   {
-    "date": "2026-07-30",
-    "panic": 54.0,
-    "price": 31.04,
-    "bear_ratio": 0.3821,
-    "total": 775
-  },
-  {
-    "date": "2026-07-31",
-    "panic": 193.1,
-    "price": 28.78,
-    "bear_ratio": 0.4763,
-    "total": 1451
-  },
-  {
     "date": "2026-08-03",
     "panic": 110.7,
     "price": 27.96,
@@ -208,5 +194,19 @@
     "price": 26.38,
     "bear_ratio": 0.5436,
     "total": 728
+  },
+  {
+    "date": "2026-09-10",
+    "panic": 104.8,
+    "price": 25.92,
+    "bear_ratio": 0.5075,
+    "total": 642
+  },
+  {
+    "date": "2026-09-11",
+    "panic": 9.5,
+    "price": 25.86,
+    "bear_ratio": 0.4375,
+    "total": 161
   }
 ]

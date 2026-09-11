@@ -1134,13 +1134,13 @@
   },
   {
     "week_start": "2026-09-07",
-    "panic": 48.4,
+    "panic": 99.6,
     "level": "温和",
-    "total": 731,
-    "bull": 154,
-    "bear": 105,
-    "neutral": 472,
-    "bear_ratio": 0.4054,
-    "mean_strength": 0.1078
+    "total": 1023,
+    "bull": 201,
+    "bear": 166,
+    "neutral": 656,
+    "bear_ratio": 0.4523,
+    "mean_strength": 0.08
   }
 ]
