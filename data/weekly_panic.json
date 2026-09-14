@@ -101,7 +101,7 @@
   {
     "week_start": "2024-11-18",
     "panic": 19.0,
-    "level": "中性偏谨慎",
+    "level": "温和",
     "total": 842,
     "bull": 231,
     "bear": 112,
@@ -706,7 +706,7 @@
   {
     "week_start": "2025-12-08",
     "panic": 152.9,
-    "level": "中性偏谨慎",
+    "level": "恐慌",
     "total": 2776,
     "bull": 623,
     "bear": 335,
@@ -1134,13 +1134,24 @@
   },
   {
     "week_start": "2026-09-07",
-    "panic": 342.5,
+    "panic": 353.1,
     "level": "恐慌",
-    "total": 2496,
-    "bull": 379,
-    "bear": 385,
-    "neutral": 1732,
-    "bear_ratio": 0.5039,
-    "mean_strength": 0.0221
+    "total": 2660,
+    "bull": 406,
+    "bear": 401,
+    "neutral": 1853,
+    "bear_ratio": 0.4969,
+    "mean_strength": 0.0239
+  },
+  {
+    "week_start": "2026-09-14",
+    "panic": 19.5,
+    "level": "中性偏谨慎",
+    "total": 282,
+    "bull": 60,
+    "bear": 32,
+    "neutral": 190,
+    "bear_ratio": 0.3478,
+    "mean_strength": 0.0781
   }
 ]

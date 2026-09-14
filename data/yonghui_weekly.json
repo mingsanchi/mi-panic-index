@@ -222,7 +222,7 @@
   {
     "week_start": "2025-02-03",
     "panic": 218.4,
-    "level": "中性偏谨慎",
+    "level": "恐慌",
     "total": 721,
     "bull": 85,
     "bear": 157,
@@ -1134,13 +1134,24 @@
   },
   {
     "week_start": "2026-09-07",
-    "panic": 99.6,
+    "panic": 111.9,
     "level": "温和",
-    "total": 1023,
-    "bull": 201,
-    "bear": 166,
-    "neutral": 656,
-    "bear_ratio": 0.4523,
-    "mean_strength": 0.08
+    "total": 1068,
+    "bull": 208,
+    "bear": 174,
+    "neutral": 686,
+    "bear_ratio": 0.4555,
+    "mean_strength": 0.0714
+  },
+  {
+    "week_start": "2026-09-14",
+    "panic": 13.8,
+    "level": "温和",
+    "total": 179,
+    "bull": 35,
+    "bear": 32,
+    "neutral": 112,
+    "bear_ratio": 0.4776,
+    "mean_strength": 0.114
   }
 ]

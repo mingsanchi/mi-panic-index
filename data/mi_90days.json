@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-06-13",
-    "total": 164,
-    "bull": 19,
-    "bear": 18,
-    "neutral": 127,
-    "bear_ratio": 0.4865,
-    "mean_strength": -0.0057,
-    "panic": 18.5
-  },
-  {
-    "date": "2026-06-14",
-    "total": 120,
-    "bull": 9,
-    "bear": 14,
-    "neutral": 97,
-    "bear_ratio": 0.6087,
-    "mean_strength": -0.0998,
-    "panic": 21.0
-  },
-  {
-    "date": "2026-06-15",
-    "total": 581,
-    "bull": 92,
-    "bear": 85,
-    "neutral": 404,
-    "bear_ratio": 0.4802,
-    "mean_strength": 0.0111,
-    "panic": 80.3
-  },
-  {
     "date": "2026-06-16",
     "total": 1292,
     "bull": 183,
@@ -908,5 +878,35 @@
     "bear_ratio": 0.4375,
     "mean_strength": 0.1098,
     "panic": 9.5
+  },
+  {
+    "date": "2026-09-12",
+    "total": 81,
+    "bull": 15,
+    "bear": 7,
+    "neutral": 59,
+    "bear_ratio": 0.3182,
+    "mean_strength": 0.0636,
+    "panic": 4.8
+  },
+  {
+    "date": "2026-09-13",
+    "total": 83,
+    "bull": 12,
+    "bear": 9,
+    "neutral": 62,
+    "bear_ratio": 0.4286,
+    "mean_strength": 0.022,
+    "panic": 8.0
+  },
+  {
+    "date": "2026-09-14",
+    "total": 282,
+    "bull": 60,
+    "bear": 32,
+    "neutral": 190,
+    "bear_ratio": 0.3478,
+    "mean_strength": 0.0781,
+    "panic": 19.5
   }
 ]
